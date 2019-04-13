@@ -3,6 +3,7 @@ function! Weather#Getdata()
     if input("どこの情報を知りたいんだい: ") == "名古屋"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=230010')
         let content = webapi#json#decode(res.content)
+        echo "\n"
         echo '発表日: '.content['publicTime']
         echo "\n"
         echo content['title']
@@ -11,5 +12,23 @@ function! Weather#Getdata()
         endfor
         echo "\n"
         echo content['description']['text']
+
+    elseif input("どこの情報を知りたいんだい: ") == "東京都" || "東京"
+        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
+        let content = webapi#json#decode(res.content)
+        echo "\n"
+        echo '発表日: '.content['publicTime']
+        echo "\n"
+        echo content['title']
+        for weather in content['forecasts']
+            echo weather['dateLabel'] weather['telop']
+        endfor
+        echo "\n"
+        echo content['description']['text']
+
+    else
+        echo '\n'
+        echo 'その場所の情報はありません'
+
     endif
 endfunction

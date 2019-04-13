@@ -38,3 +38,6 @@ normalモードで
 
 ![例](./weather-vim.png)
 
+# 使用したapi
+http://weather.livedoor.com/weather_hacks/webservice
+

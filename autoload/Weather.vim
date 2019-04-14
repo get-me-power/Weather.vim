@@ -1,6 +1,7 @@
 function! Weather#Getdata()
+    let city= input("where? ")
     "urlを名古屋に指定"
-    if input("どこの情報を知りたいんだい: ") == "名古屋"
+    if city == "名古屋"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=230010')
         let content = webapi#json#decode(res.content)
         echo "\n"
@@ -13,7 +14,7 @@ function! Weather#Getdata()
         echo "\n"
         echo content['description']['text']
 
-    elseif input("どこの情報を知りたいんだい: ") == "東京都" || "東京"
+    elseif city == "東京都"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
         let content = webapi#json#decode(res.content)
         echo "\n"

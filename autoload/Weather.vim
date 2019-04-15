@@ -27,6 +27,18 @@ function! Weather#Getdata()
         echo "\n"
         echo content['description']['text']
 
+    elseif city == "大阪"
+        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=270000')
+        let content = webapi#json#decode(res.content)
+        echo "\n"
+        echo '発表日: '.content['publicTime']
+        echo "\n"
+        echo content['title']
+        for weather in content['forecasts']
+            echo weather['dateLabel'] weather['telop']
+        endfor
+        echo "\n"
+        echo content['description']['text']
     else
         echo '\n'
         echo 'その場所の情報はありません'

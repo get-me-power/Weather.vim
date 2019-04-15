@@ -5,31 +5,14 @@ function! Weather#Getdata()
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=230010')
         call s:post(res)
         
-    elseif city == "東京都"
+    elseif city == "東京都" || "東京"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
-        let content = webapi#json#decode(res.content)
-        echo "\n"
-        echo '発表日: '.content['publicTime']
-        echo "\n"
-        echo content['title']
-        for weather in content['forecasts']
-            echo weather['dateLabel'] weather['telop']
-        endfor
-        echo "\n"
-        echo content['description']['text']
+        call s:post(res)
 
     elseif city == "大阪"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=270000')
-        let content = webapi#json#decode(res.content)
-        echo "\n"
-        echo '発表日: '.content['publicTime']
-        echo "\n"
-        echo content['title']
-        for weather in content['forecasts']
-            echo weather['dateLabel'] weather['telop']
-        endfor
-        echo "\n"
-        echo content['description']['text']
+        call s:post(res)
+
     else
         echo '\n'
         echo 'その場所の情報はありません'

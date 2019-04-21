@@ -21,9 +21,18 @@ function! Weather#Getdata()
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=270000')
         call s:post(res)
 
+    elseif city == "広島"
+        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=340010')
+        call s:post(res)
+
     elseif city == "福岡"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400010')
         call s:post(res)
+
+    elseif city == "那覇"
+        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=471010')
+        call s:post(res)
+
     else
         echo '\n'
         echo 'その場所の情報はありません'

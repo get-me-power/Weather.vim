@@ -13,7 +13,7 @@ function! Weather#Getdata()
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=040010')
         call s:post(res)
 
-    elseif city == "東京都" || "東京"
+    elseif city == "東京都" || city == "東京"
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
         call s:post(res)
     

@@ -1,3 +1,10 @@
+if !exists('g:loaded_Weather')
+    finish
+endif
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! Weather#Getdata()
     let city= input("where? ")
     let id = Weather#returncity#return(city)
@@ -20,3 +27,6 @@ function s:post(res)
     echo "\n"
     echo content['description']['text']
 endfunction
+
+let &cpo = s:save_cpo
+unlet s:save_cpo

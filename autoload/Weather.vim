@@ -1,6 +1,7 @@
 function! Weather#Getdata()
     let city= input("where? ")
     let id = Weather#returncity#return(city)
+    " 都市が対応していない場合，idに0が入る
     if id != 0
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
         call s:post(res)

@@ -3,6 +3,11 @@ function! Weather#returncity#return(city)
                 \ 'Weather#city#%s#id',
                 \  a:city,
                 \)
-    let Fn = function(funcname)
-    return Fn()
+    try
+        let Fn = function(funcname)
+        return Fn()
+    catch /^Vim\%((\a\+)\)\=:E117:/
+        echo "\n"
+        echomsg 'その都市の情報はありません'
+    endtry
 endfunction

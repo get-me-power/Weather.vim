@@ -1,50 +1,8 @@
 function! Weather#Getdata()
     let city= input("where? ")
-    "urlを名古屋に指定"
-    if city == "名古屋"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=230010')
-        call s:post(res)
-
-    elseif city == "札幌"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=016010')
-        call s:post(res)
-
-    elseif city == "仙台"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=040010')
-        call s:post(res)
-
-    elseif city == "東京都" || city == "東京"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
-        call s:post(res)
-    
-    elseif city == "滋賀"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=250010')
-        call s:post(res)
-
-    elseif city == "京都"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=260010')
-        call s:post(res)
-
-    elseif city == "大阪"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=270000')
-        call s:post(res)
-
-    elseif city == "広島"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=340010')
-        call s:post(res)
-
-    elseif city == "福岡"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400010')
-        call s:post(res)
-
-    elseif city == "那覇"
-        let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city=471010')
-        call s:post(res)
-
-    else
-        echo '\n'
-        echo 'その場所の情報はありません'
-    endif
+    let id = Weather#returncity#return(city)
+    let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
+    call s:post(res)
 endfunction
 
 function s:post(res)

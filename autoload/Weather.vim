@@ -5,9 +5,8 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! Weather#Getdata()
-    let city= input("where? ")
-    let id = Weather#returncity#return(city)
+function! Weather#Getdata(city)
+    let id = Weather#returncity#return(a:city)
     " 都市が対応していない場合，idに0が入る
     if id != 0
         let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
@@ -17,15 +16,18 @@ endfunction
 
 function s:post(res)
     let content = webapi#json#decode(a:res.content)
-    echo "\n"
-    echo '発表日: '.content['publicTime']
-    echo "\n"
-    echo content['title']
+    let info = []
+    " echo '発表日: '.content['publicTime']
+    call add(info, "発表日: ".content['publicTime'])
+    call add(info, "")
+    call add(info, content['title'])
+    " echo content['title']
     for weather in content['forecasts']
-        echo weather['dateLabel'] weather['telop']
+        call add(info, weather['dateLabel']." ".weather['telop'])
+        call add(info, "------------")
     endfor
-    echo "\n"
-    echo content['description']['text']
+    call add(info, content['description']['text'])
+    echo join(info, "\n")
 endfunction
 
 " --- write popupwindow ---"
@@ -40,15 +42,15 @@ endfunction
 function! s:popup_filter(ctx, wid, c) abort
     if a:c ==# 'j'
         let a:ctx.select += a:ctx.select ==# len(a:ctx.menu)-1 ? 0 : 1
-        echo a:ctx.select
+        echo a:ctx.menu[a:ctx.select]
         call s:popup_menu_update(s:wid, a:ctx)
     elseif a:c ==# 'k'
         let a:ctx.select -= a:ctx.select ==# 0 ? 0 : 1
-        echo a:ctx.select
+        echo a:ctx.menu[a:ctx.select]
         call s:popup_menu_update(s:wid, a:ctx)
     elseif a:c ==# "\n" || a:c ==# "\r" || a:c ==# ' '
-
         call popup_close(a:wid)
+        call Weather#Getdata(a:ctx.menu[a:ctx.select])
         if a:ctx.select ==# 1
             bw!
         endif

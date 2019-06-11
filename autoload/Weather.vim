@@ -50,7 +50,6 @@ function! s:popup_filter(ctx, wid, c) abort
         call popup_close(a:wid)
         call Weather#Getdata(a:ctx.menu[a:ctx.select])
     endif
-    return 1
 endfunction
 
 function! s:show_popup(menu) abort

@@ -17,11 +17,9 @@ endfunction
 function s:post(res)
     let content = webapi#json#decode(a:res.content)
     let info = []
-    " echo '発表日: '.content['publicTime']
     call add(info, "発表日: ".content['publicTime'])
     call add(info, "")
     call add(info, content['title'])
-    " echo content['title']
     for weather in content['forecasts']
         call add(info, weather['dateLabel']." ".weather['telop'])
         call add(info, "------------")
@@ -51,9 +49,6 @@ function! s:popup_filter(ctx, wid, c) abort
     elseif a:c ==# "\n" || a:c ==# "\r" || a:c ==# ' '
         call popup_close(a:wid)
         call Weather#Getdata(a:ctx.menu[a:ctx.select])
-        if a:ctx.select ==# 1
-            bw!
-        endif
     endif
     return 1
 endfunction
@@ -67,8 +62,8 @@ function! s:show_popup(menu) abort
     call s:popup_menu_update(s:wid, l:ctx)
 endfunction
 
-function! Open_weather() abort
-    call s:show_popup(['Tokyo', 'Kyoto', 'Osaka'])
+function! Weather#open() abort
+    call s:show_popup(['Tokyo', 'Kyoto', 'Osaka', 'Hukuoka'])
 endfunction
 
 let &cpo = s:save_cpo

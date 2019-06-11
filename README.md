@@ -2,7 +2,11 @@
 
 コマンド一つで今日の天気を知ることができるプラグインです．
 
-# Install
+#usage
+
+Vim 8.1.1391以上
+
+**Neovim非対応**
 
 **注意**: weather-vimには別プラグインである
 [webapi-vim](https://github.com/mattn/webapi-vim)が必要です．
@@ -12,6 +16,8 @@
 > https://github.com/mattn/webapi-vim
 
 ---
+
+# install
 
 ### dein.vimを使っている場合
 
@@ -47,4 +53,8 @@ normalモードで
 
 # 使用したapi
 http://weather.livedoor.com/weather_hacks/webservice
+
+# Todo
+
+- Neovimに対応させる
 

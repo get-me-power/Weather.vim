@@ -1,8 +1,8 @@
-# weather-vim
+# Weather.vim
 
 コマンド一つで今日の天気を知ることができるプラグインです．
 
-#usage
+# Usage
 
 Vim 8.1.1391以上
 
@@ -17,15 +17,15 @@ Vim 8.1.1391以上
 
 ---
 
-# install
+# Install
 
-### dein.vimを使っている場合
+## dein.vimを使っている場合
 
 ```
 call dein#add('kazukazuinaina/weather-vim')
 ```
 
-### vim-plugを使っている場合
+## vim-plugを使っている場合
 
 ```
  Plug 'kazukazuinaina/weather-vim'
@@ -33,14 +33,13 @@ call dein#add('kazukazuinaina/weather-vim')
 
 # 使い方
 
-normalモードで
-
 ```
 :Weather
 ```
 でお天気を教えてくれます．
 
 # 対応都市
+
 |北海道|東北地方|関東地方|中部地方|近畿地方|中国地方|四国地方|九州・沖縄地方|
 |------|--------|--------|--------|--------|--------|--------|--------------|
 |札幌|仙台|東京|名古屋|滋賀|広島|hoge|那覇|
@@ -49,7 +48,7 @@ normalモードで
 
 # スクリーンショット
 
-![例](./weather-vim.png)
+![例](./Weather.gif)
 
 # 使用したapi
 http://weather.livedoor.com/weather_hacks/webservice

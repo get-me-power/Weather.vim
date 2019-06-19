@@ -62,7 +62,13 @@ function! s:show_popup(menu) abort
 endfunction
 
 function! Weather#open() abort
-  call s:show_popup(['Tokyo', 'Kyoto', 'Osaka', 'Hukuoka'])
+  call s:show_popup(['Sapporo', 
+        \'Sendai', 
+        \'Tokyo', 
+        \'Nagoya', 
+        \'Kyoto', 
+        \'Osaka', 
+        \'Hukuoka'])
 endfunction
 
 let &cpo = s:save_cpo

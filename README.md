@@ -22,13 +22,13 @@ Vim 8.1.1391以上
 ## dein.vimを使っている場合
 
 ```
-call dein#add('kazukazuinaina/weather-vim')
+call dein#add('kazukazuinaina/Weather.vim')
 ```
 
 ## vim-plugを使っている場合
 
 ```
- Plug 'kazukazuinaina/weather-vim'
+ Plug 'kazukazuinaina/Weather.vim'
 ```
 
 # 使い方

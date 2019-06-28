@@ -4,12 +4,9 @@
 
 # Requirement
 
-Vim 8.1.1391以上
-
 **Neovim非対応**
 
-**注意**: weather-vimには別プラグインである
-[webapi-vim](https://github.com/mattn/webapi-vim)が必要です．
+**注意**: weather-vimには別プラグインである[webapi-vim](https://github.com/mattn/webapi-vim)が必要です．
 
 インストールされていない場合は以下を参照してください．
 
@@ -28,7 +25,7 @@ call dein#add('kazukazuinaina/Weather.vim')
 ## vim-plugを使っている場合
 
 ```
- Plug 'kazukazuinaina/Weather.vim'
+Plug 'kazukazuinaina/Weather.vim'
 ```
 
 # 使い方
@@ -49,6 +46,8 @@ call dein#add('kazukazuinaina/Weather.vim')
 - **広島**
 - **福岡**
 
+後に追加予定
+
 # スクリーンショット
 
 ![例](./Weather.gif)
@@ -59,5 +58,5 @@ http://weather.livedoor.com/weather_hacks/webservice
 # Todo
 
 - [ ] Neovimに対応させる
-- [ ] Vimの旧バージョンに対応させる
+- [x] Vimの旧バージョンに対応させる
 - [ ] 都市を増やす

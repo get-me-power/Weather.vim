@@ -62,16 +62,21 @@ function! s:show_popup(menu) abort
 endfunction
 
 function! Weather#open() abort
-  call s:show_popup([
-        \'Sapporo', 
-        \'Sendai', 
-        \'Tokyo', 
-        \'Nagoya', 
-        \'Kyoto', 
-        \'Osaka', 
-        \'Hiroshima',
-        \'Hukuoka'
-        \])
+  if has("patch-8.1.1453")
+    call s:show_popup([
+          \'Sapporo', 
+          \'Sendai', 
+          \'Tokyo', 
+          \'Nagoya', 
+          \'Kyoto', 
+          \'Osaka', 
+          \'Hiroshima',
+          \'Hukuoka'
+          \])
+  else
+    let city = input("where?: ")
+    call Weather#Getdata(city)
+  endif
 endfunction
 
 let &cpo = s:save_cpo

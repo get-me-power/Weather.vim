@@ -18,6 +18,9 @@ endfunction
 function s:post(res)
   let content = webapi#json#decode(a:res.content)
   let info = []
+  if !has("patch-8.1.1453")
+    echo "\n"
+  endif
   call add(info, "発表日: ".content['publicTime'])
   call add(info, "")
   call add(info, content['title'])
@@ -26,6 +29,7 @@ function s:post(res)
     call add(info, "------------")
   endfor
   call add(info, content['description']['text'])
+  echo ""
   echo join(info, "\n")
 endfunction
 

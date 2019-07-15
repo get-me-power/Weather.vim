@@ -1,7 +1,4 @@
 scriptencoding utf-8
-if !exists('g:loaded_Weather')
-  finish
-endif
 
 let s:save_cpo = &cpo
 set cpo&vim

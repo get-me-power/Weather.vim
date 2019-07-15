@@ -1,3 +1,4 @@
+scriptencoding utf-8
 if !exists('g:loaded_Weather')
   finish
 endif

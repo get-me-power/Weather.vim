@@ -72,6 +72,7 @@ function! Weather#open() abort
           \'Sendai', 
           \'Tokyo', 
           \'Nagoya', 
+          \'Shiga',
           \'Kyoto', 
           \'Osaka', 
           \'Hiroshima',

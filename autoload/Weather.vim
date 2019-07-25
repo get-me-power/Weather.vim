@@ -1,6 +1,4 @@
-if !exists('g:loaded_Weather')
-  finish
-endif
+scriptencoding utf-8
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -44,11 +42,9 @@ endfunction
 function! s:popup_filter(ctx, wid, c) abort
   if a:c ==# 'j'
     let a:ctx.select += a:ctx.select ==# len(a:ctx.menu)-1 ? 0 : 1
-    echo a:ctx.menu[a:ctx.select]
     call s:popup_menu_update(s:wid, a:ctx)
   elseif a:c ==# 'k'
     let a:ctx.select -= a:ctx.select ==# 0 ? 0 : 1
-    echo a:ctx.menu[a:ctx.select]
     call s:popup_menu_update(s:wid, a:ctx)
   elseif a:c ==# "\n" || a:c ==# "\r" || a:c ==# ' '
     call popup_close(a:wid)

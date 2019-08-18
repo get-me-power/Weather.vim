@@ -62,7 +62,7 @@ function! s:show_popup(menu) abort
 endfunction
 
 function! Weather#open() abort
-  if has("patch-8.1.1453")
+  if exists('*popup_create') && exists('*popup_clear')
     call s:show_popup([
           \'Sapporo', 
           \'Sendai', 

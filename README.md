@@ -1,14 +1,12 @@
 # Weather.vim
 
-コマンド一つで今日の天気を知ることができるプラグインです．
+A plug-in that lets you know the weather in Japan with a single command.
 
 # Requirement
 
-**Neovim非対応**
+[webapi-vim](https://github.com/mattn/webapi-vim)
 
-**注意**: weather-vimには別プラグインである[webapi-vim](https://github.com/mattn/webapi-vim)が必要です．
-
-インストールされていない場合は以下を参照してください．
+If it is not installed, see below.
 
 > https://github.com/mattn/webapi-vim
 
@@ -16,48 +14,45 @@
 
 # Install
 
-## dein.vimを使っている場合
+## Use dein.vim
 
 ```
 call dein#add('kazukazuinaina/Weather.vim')
 ```
 
-## vim-plugを使っている場合
+## Use vim-plug
 
 ```
 Plug 'kazukazuinaina/Weather.vim'
 ```
 
-# 使い方
+# Usage
 
-```
-:Weather
-```
-でお天気を教えてくれます．
+Simply run `:Weather` command
 
 # 対応都市
 
-- **北海道**
-- **仙台**
-- **東京**
-- **名古屋**
-- **滋賀**
-- **京都**
-- **大阪**
-- **広島**
-- **福岡**
+- **Hokkaido**
+- **Sendai**
+- **Tokyo**
+- **Nagoya**
+- **Shiga**
+- **Kyoto**
+- **Osaka**
+- **Hiroshima**
+- **Hukuoka**
 
-後に追加予定
+More cities will be added later
 
-# スクリーンショット
+# screenshot
 
 ![例](./Weather.gif)
 
-# 使用したapi
-http://weather.livedoor.com/weather_hacks/webservice
+# Used Web Api
+
+> http://weather.livedoor.com/weather_hacks/webservice
 
 # Todo
 
-- [ ] Neovimに対応させる
-- [x] Vimの旧バージョンに対応させる
-- [ ] 都市を増やす
+- [ ] Add more city in japan
+- [ ] Adopt global city

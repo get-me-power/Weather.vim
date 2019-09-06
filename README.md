@@ -30,7 +30,7 @@ Plug 'kazukazuinaina/Weather.vim'
 
 Simply run `:Weather` command
 
-# 対応都市
+# Applicable cities
 
 - **Hokkaido**
 - **Sendai**
@@ -46,7 +46,7 @@ More cities will be added later
 
 # screenshot
 
-![例](./Weather.gif)
+![example](./Weather.gif)
 
 # Used Web Api
 

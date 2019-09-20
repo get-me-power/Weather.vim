@@ -70,7 +70,7 @@ function! s:show_popup(menu) abort
 endfunction
 
 function! Weather#open() abort
-  if has("patch-8.1.1453")
+  if exists('*popup_create') && exists('*popup_close')
     call s:show_popup(s:city_data)
   else
     let city = input("where?: ")

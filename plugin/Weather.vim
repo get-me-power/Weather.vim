@@ -1,5 +1,5 @@
 if exists('g:loaded_Weather')
-    finish
+  finish
 endif
 let g:loaded_Weather = 1
 

@@ -3,6 +3,11 @@ scriptencoding utf-8
 let s:save_cpo = &cpo
 set cpo&vim
 
+if exists('*popup_create')
+  let s:dir = expand('<sfile>:h:h') . '/autoload/Weather/city'
+  let s:city_data = map(glob(expand(s:dir) . '/*.vim', 1, 1), 'fnamemodify(v:val, ":t:r")')
+endif
+
 function! Weather#Getdata(city)
   let id = Weather#returncity#return(a:city)
   " 都市が対応していない場合，idに0が入る
@@ -33,7 +38,6 @@ endfunction
 " --- write popupwindow ---"
 
 function! s:popup_menu_update(wid, ctx) abort
-  " winbufnr()は現在のウインドウに関連付けられているバッファの番号が返る
   let l:buf = winbufnr(a:wid)
   let l:menu = map(copy(a:ctx.menu), '(v:key == a:ctx.select ? "→" : "  ") .. v:val')
   call setbufline(l:buf, 1, l:menu)
@@ -49,7 +53,11 @@ function! s:popup_filter(ctx, wid, c) abort
   elseif a:c ==# "\n" || a:c ==# "\r" || a:c ==# ' '
     call popup_close(a:wid)
     call Weather#Getdata(a:ctx.menu[a:ctx.select])
+  elseif a:c ==# "\x1b"
+    call popup_close(a:wid)
+    return 0
   endif
+  return 1
 endfunction
 
 function! s:show_popup(menu) abort
@@ -63,17 +71,7 @@ endfunction
 
 function! Weather#open() abort
   if has("patch-8.1.1453")
-    call s:show_popup([
-          \'Sapporo', 
-          \'Sendai', 
-          \'Tokyo', 
-          \'Nagoya', 
-          \'Shiga',
-          \'Kyoto', 
-          \'Osaka', 
-          \'Hiroshima',
-          \'Hukuoka'
-          \])
+    call s:show_popup(s:city_data)
   else
     let city = input("where?: ")
     call Weather#Getdata(city)

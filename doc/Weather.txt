@@ -23,4 +23,30 @@ License : MIT license  {{{
 }}}
 
 ==============================================================================
-CONTENTS					*say-contents*
+CONTENTS					*Weather-contents*
+
+INTRODUCTION			|Weather-introduction|
+USAGE				|Weather-usage|
+INTERFACE			|Weather-interface|
+  COMMANDS			  |Weather-commands|
+  FUNCTIONS			  |Weather-functions|
+TODO				|Weather-todo|
+CHANGELOG			|Weather-changelog|
+
+==============================================================================
+INTRODUCTION					*Weather-introduction*
+
+*sWeather* is a Vim plugin to know the weather with Vim.
+
+==============================================================================
+USAGE						*Weather-usage*
+
+It is very simple. You only run :Weather command in command-line mode.
+
+
+
+
+
+
+
+==============================================================================

@@ -52,6 +52,8 @@ More cities will be added later
 
 > http://weather.livedoor.com/weather_hacks/webservice
 
+# Pull Request
+
 # Todo
 
 - [ ] Add more city in japan

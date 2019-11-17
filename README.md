@@ -54,7 +54,9 @@ More cities will be added later
 
 # Pull Request
 
+I hope to get your Pull Request! Please fork this project!
+
 # Todo
 
-- [ ] Add more city in japan
+- [x] Add more city in japan
 - [ ] Adopt global city

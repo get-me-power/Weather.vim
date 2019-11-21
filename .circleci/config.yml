@@ -27,4 +27,4 @@ jobs:
 
       - run:
           name: Unit test
-          command: vim -u .circleci/.vimrc -c "call Weather#test#test_Weather#test"
+          command: vim -u .circleci/.vimrc -c "call Weather#test#test_Weather#test()"

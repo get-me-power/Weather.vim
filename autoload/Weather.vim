@@ -19,6 +19,7 @@ endfunction
 
 function s:post(res)
   let content = webapi#json#decode(a:res.content)
+  echo content['status']
   let info = []
   if !has("patch-8.1.1453")
     echo "\n"

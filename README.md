@@ -1,4 +1,4 @@
-https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master
+[![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master)
 
 # Weather.vim
 

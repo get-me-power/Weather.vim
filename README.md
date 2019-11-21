@@ -62,3 +62,4 @@ I hope to get your Pull Request! Please fork this project!
 
 - [x] Add more city in japan
 - [ ] Adopt global city
+- [ ] Add test

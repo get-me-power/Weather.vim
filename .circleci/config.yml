@@ -26,5 +26,17 @@ jobs:
           command: vim --version
 
       - run:
+          name: Install webapi-vim
+          command: git clone https://github.com/mattn/webapi-vim
+
+      - run:
+          name: write .vimrc
+          command: mv ~/project/.circleci/.vimrc ~/.vimrc
+
+      - run:
+          name: check path
+          command: ls -la && pwd
+
+      - run:
           name: Unit test
-          command: vim -u .circleci/.vimrc -c "call Weather#test#run()"
+          command: vim +":call Weather#test#run()"

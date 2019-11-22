@@ -1,4 +1,4 @@
-function! Weather#returncity#return(city)
+function! Weather#returncity#return(city) abort
   let funcname = printf(
         \ 'Weather#city#%s#id',
         \  a:city,

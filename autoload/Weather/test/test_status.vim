@@ -6,6 +6,6 @@ function! Weather#test#test_status#run()
     let l:id = Weather#returncity#return(i)
     let l:res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
     echo i . " status:" .  l:res.status
-    call assert_equal(200, webapi#json#decode(l:res.status))
+    call assert_equal(200, l:res.status)
   endfor
 endfunction

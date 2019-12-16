@@ -44,10 +44,10 @@ function! s:popup_menu_update(wid, ctx) abort
 endfunction
 
 function! s:popup_filter(ctx, wid, c) abort
-  if a:c ==# 'j'
+  if a:c ==# get(g:, 'Weather_keybind_down', 'j')
     let a:ctx.select += a:ctx.select ==# len(a:ctx.menu)-1 ? 0 : 1
     call s:popup_menu_update(s:wid, a:ctx)
-  elseif a:c ==# 'k'
+  elseif a:c ==# get(g:, 'Weather_keybind_up', 'k')
     let a:ctx.select -= a:ctx.select ==# 0 ? 0 : 1
     call s:popup_menu_update(s:wid, a:ctx)
   elseif a:c ==# "\n" || a:c ==# "\r" || a:c ==# ' '

@@ -34,9 +34,5 @@ jobs:
           command: mv ~/project/.circleci/.vimrc ~/.vimrc
 
       - run:
-          name: check path
-          command: ls -la && pwd
-
-      - run:
           name: Unit test
           command: vim +":call Weather#test#run()"

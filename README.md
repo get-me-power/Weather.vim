@@ -18,14 +18,14 @@ If it is not installed, see below.
 
 ## Use dein.vim
 
-```
+```viml
 call dein#add('mattn/webapi-vim')
 call dein#add('kazukazuinaina/Weather.vim')
 ```
 
 ## Use vim-plug
 
-```
+```viml
 Plug 'mattn/webapi-vim'
 Plug 'kazukazuinaina/Weather.vim'
 ```

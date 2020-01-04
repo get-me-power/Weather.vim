@@ -1,6 +1,4 @@
-[![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master)
-
-# Weather.vim
+# Weather.vim [![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master)
 
 A plug-in that lets you know the weather in Japan with a single command.
 

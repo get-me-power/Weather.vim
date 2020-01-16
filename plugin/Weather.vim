@@ -1,4 +1,4 @@
-if exists('g:loaded_Weather')
+if exists('g:loaded_Weather') || v:version < 800
   finish
 endif
 let g:loaded_Weather = 1

@@ -1,6 +1,18 @@
-# Weather.vim [![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master) [![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim)
+# Weather.vim [![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim) [![Build Status](https://travis-ci.org/kazukazuinaina/Weather.vim.svg?branch=master)](https://travis-ci.org/kazukazuinaina/Weather.vim)
 
 A plug-in that lets you know the weather in Japan with a single command.
+
+# Requirement
+
+- Vim8
+
+Ps : This plugin is recommended for use with Vim 8.1 or above.
+
+## Support
+
+- Vim8.1 or above
+
+Ps : This plugin is recommended for use with Vim 8.1 or above.
 
 # Install
 

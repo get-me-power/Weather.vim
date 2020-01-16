@@ -1,30 +1,18 @@
-# Weather.vim [![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master)
+# Weather.vim [![CircleCI](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master.svg?style=svg)](https://circleci.com/gh/kazukazuinaina/Weather.vim/tree/master) [![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim)
 
 A plug-in that lets you know the weather in Japan with a single command.
-
-# Requirement
-
-[webapi-vim](https://github.com/mattn/webapi-vim)
-
-If it is not installed, see below.
-
-> https://github.com/mattn/webapi-vim
-
----
 
 # Install
 
 ## Use dein.vim
 
 ```viml
-call dein#add('mattn/webapi-vim')
 call dein#add('kazukazuinaina/Weather.vim')
 ```
 
 ## Use vim-plug
 
 ```viml
-Plug 'mattn/webapi-vim'
 Plug 'kazukazuinaina/Weather.vim'
 ```
 

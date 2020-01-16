@@ -1,0 +1,29 @@
+language: generic
+
+install:
+  - (if ! test -d $HOME/vim-$VIM_VERSION/bin; then
+    git clone https://github.com/vim/vim $HOME/vim &&
+    cd $HOME/vim &&
+    git checkout v$VIM_VERSION &&
+    ./configure --prefix=$HOME/vim-$VIM_VERSION &&
+    make &&
+    make install;
+    fi)
+
+cache:
+  directories:
+    - $HOME/vim-$VIM_VERSION
+
+env:
+  - VIM_VERSION=8.2.0000
+  - VIM_VERSION=8.1.0000
+  - VIM_VERSION=8.0.0000
+
+
+script:
+  - export PATH=$HOME/vim-$VIM_VERSION/bin:$PATH
+  - echo "set runtimepath+=$TRAVIS_BUILD_DIR" > ~/.vimrc
+  - cat ~/.vimrc
+  - cd $TRAVIS_BUILD_DIR
+  - vim --version
+  - vim +":call Weather#test#run()"

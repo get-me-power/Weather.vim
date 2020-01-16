@@ -3,6 +3,11 @@ scriptencoding utf-8
 let s:save_cpo = &cpo
 set cpo&vim
 
+" vital.vim's init
+let s:V = vital#Weather#new()
+let s:H = s:V.import('Web.HTTP')
+let s:J = s:V.import('Web.JSON')
+
 if exists('*popup_create')
   let s:dir = expand('<sfile>:h:h') . '/autoload/Weather/city'
   let s:city_data = map(glob(expand(s:dir) . '/*.vim', 1, 1), 'fnamemodify(v:val, ":t:r")')
@@ -12,13 +17,13 @@ function! Weather#Getdata(city)
   let id = Weather#returncity#return(a:city)
   " 都市が対応していない場合，idに0が入る
   if id != 0
-    let res = webapi#http#get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
+    let res = s:H.get('http://weather.livedoor.com/forecast/webservice/json/v1?city='.id)
     call s:post(res)
   endif
 endfunction
 
 function s:post(res)
-  let content = webapi#json#decode(a:res.content)
+  let content = s:J.decode(a:res.content)
   let info = []
   if !has("patch-8.1.1453")
     echo "\n"

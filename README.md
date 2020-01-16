@@ -12,8 +12,6 @@ Ps : This plugin is recommended for use with Vim 8.1 or above.
 
 - Vim8.1 or above
 
-Ps : This plugin is recommended for use with Vim 8.1 or above.
-
 # Install
 
 ## Use dein.vim
@@ -42,7 +40,7 @@ Simply run `:Weather` command
 - **Kyoto**
 - **Osaka**
 - **Hiroshima**
-- **Hukuoka**
+- **Fukuoka**
 
 More cities will be added later
 

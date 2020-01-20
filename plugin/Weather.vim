@@ -1,5 +1,7 @@
-if exists('g:loaded_Weather') || v:version < 800
+if exists('g:loaded_Weather')
   finish
+elseif v:version < 800
+  echoerr "vital.vim does not work this version of Vim"
 endif
 let g:loaded_Weather = 1
 

@@ -1,4 +1,7 @@
-# Weather.vim [![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim) [![Build Status](https://travis-ci.org/kazukazuinaina/Weather.vim.svg?branch=master)](https://travis-ci.org/kazukazuinaina/Weather.vim) ![reviewdog](https://github.com/kazukazuinaina/Weather.vim/workflows/reviewdog/badge.svg)
+# Weather.vim
+[![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim)
+![CI](https://github.com/kazukazuinaina/Weather.vim/workflows/CI/badge.svg)
+![reviewdog](https://github.com/kazukazuinaina/Weather.vim/workflows/reviewdog/badge.svg)
 
 A plug-in that lets you know the weather in Japan with a single command.
 

@@ -1,7 +1,8 @@
 if exists('g:loaded_Weather')
   finish
 elseif v:version < 800
-  echoerr "vital.vim does not work this version of Vim"
+  echoerr "This plugin don't run under Vim8."
+  finish
 endif
 let g:loaded_Weather = 1
 

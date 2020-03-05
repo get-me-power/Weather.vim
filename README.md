@@ -33,6 +33,18 @@ Plug 'kazukazuinaina/Weather.vim'
 
 Simply run `:Weather` command
 
+## key config for popup window
+
+```viml
+let g:Weather_keybind_down = 'j'
+```
+default: j
+
+```viml
+let g:Weather_keybind_up = 'k'
+```
+default: k
+
 # Applicable cities
 
 - **Hokkaido**

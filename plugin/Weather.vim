@@ -1,3 +1,8 @@
+scriptencoding utf-8
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 if exists('g:loaded_Weather')
   finish
 elseif v:version < 800
@@ -6,10 +11,6 @@ elseif v:version < 800
 endif
 let g:loaded_Weather = 1
 
-let s:save_cpo = &cpo
-set cpo&vim
-
-" command! Weather call Weather#Getdata() 
 command! Weather call Weather#open()
 
 let &cpo = s:save_cpo

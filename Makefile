@@ -1,4 +1,4 @@
 .PHONY: check
 
 check:
-	nvcheck TEST.md:
+	nvcheck TEST.md

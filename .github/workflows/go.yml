@@ -13,9 +13,8 @@ jobs:
         go-version: 1.x
     - name: checkout
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 1
+
     - name: lint
       run: |
-        GO111MODULE=off GOBIN=$(pwd)/bin go get github.com/koron/nvcheck -set_exit_status ./...
+        go get github.com/koron/nvcheck
         make check
